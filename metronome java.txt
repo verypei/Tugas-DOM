@@ -1,0 +1,32 @@
+import java.io.File;
+import java.util.Scanner;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class Click {
+
+	public static void main(String[] args) {
+		
+		File clap = new File ("E:\\eclipse-workspace\\TestClick\\src\\click.wav");
+		Scanner input = new Scanner(System.in);
+		System.out.println("input angka : ");
+		long metro= input.nextLong();
+		long result = Math.round((60.0/metro)*1000);
+		for(int i=0;i<=10;i++) {
+			try{
+				playSound(clap);
+				Thread.sleep(result);
+			}
+			catch(Exception e) {}
+		}
+	}
+	static synchronized void playSound(File sound){
+		
+		try {
+			Clip clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(sound));
+			clip.start();
+		}
+		catch(Exception e) {}
+	}
+}

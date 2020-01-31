@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<!--head-->
+	<head>
+	
+		<meta charset="UTF-8">
+		<title>Music slide show</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+<!--body-->
+	<body>
+
+		
+<!--file audio---->
+		<audio id="myAudio">
+		  <source src="tes.mp3" type="audio/mpeg" >
+		  Your browser does not support the audio element.
+		</audio>
+<!--fungsi play and pause file audio---->
+<div class="container">
+  <button id = "play" onclick="playAudio()" type="button"><img src="play.jpg"></button>
+  <button id = "pause" onclick="pauseAudio()" type="button"><img src="pause.jpg"></button> 
+</div>
+<!--script javascript--->
+		<script src = "metronome.js">
+
+		</script>
+<!--image array-->
+		<img name="slide" width="400" height="400"/>
+	</body>
+</html>
